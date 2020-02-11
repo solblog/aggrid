@@ -1,1 +1,25 @@
-<p>fourth-exercise works!</p>
+<ag-grid-angular
+   #agGrid
+   style="width: 100%; height: 100%;"
+   id="myGrid"
+   class="ag-theme-balham"
+   [modules]="modules"
+   [columnDefs]="columnDefs"
+   [defaultColDef]="defaultColDef"
+   [components]="components"
+   [floatingFilter]="true"
+   [debug]="true"
+   [rowSelection]="rowSelection"
+   [rowDeselection]="true"
+   [rowModelType]="rowModelType"
+   [cacheOverflowSize]="cacheOverflowSize"
+   [maxConcurrentDatasourceRequests]="maxConcurrentDatasourceRequests"
+   [infiniteInitialRowCount]="infiniteInitialRowCount"
+   [maxBlocksInCache]="maxBlocksInCache"
+   [pagination]="true"
+   [paginationPageSize]="paginationPageSize"
+   [cacheBlockSize]="cacheBlockSize"
+   [getRowNodeId]="getRowNodeId"
+   [rowData]="rowData"
+   (gridReady)="onGridReady($event)"
+ ></ag-grid-angular>
