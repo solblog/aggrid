@@ -9,35 +9,7 @@ import "@ag-grid-community/all-modules/dist/styles/ag-theme-balham.css";
   selector: 'app-fourth-exercise',
   templateUrl: './fourth-exercise.component.html',
   styleUrls: ['./fourth-exercise.component.scss']
-   /*
-   template: `
-   <ag-grid-angular
-   #agGrid
-   style="width: 100%; height: 100%;"
-   id="myGrid"
-   class="ag-theme-balham"
-   [modules]="modules"
-   [columnDefs]="columnDefs"
-   [defaultColDef]="defaultColDef"
-   [components]="components"
-   [floatingFilter]="true"
-   [debug]="true"
-   [rowSelection]="rowSelection"
-   [rowDeselection]="true"
-   [rowModelType]="rowModelType"
-   [cacheOverflowSize]="cacheOverflowSize"
-   [maxConcurrentDatasourceRequests]="maxConcurrentDatasourceRequests"
-   [infiniteInitialRowCount]="infiniteInitialRowCount"
-   [maxBlocksInCache]="maxBlocksInCache"
-   [pagination]="true"
-   [paginationPageSize]="paginationPageSize"
-   [cacheBlockSize]="cacheBlockSize"
-   [getRowNodeId]="getRowNodeId"
-   [rowData]="rowData"
-   (gridReady)="onGridReady($event)"
- ></ag-grid-angular>
-  `
-  */
+  
 })
 export class FourthExerciseComponent implements OnInit {
 
@@ -75,12 +47,13 @@ export class FourthExerciseComponent implements OnInit {
       {
         headerName: "Age",
         field: "age",
-        width: 90
+        width: 90,
+        sortable: true
       },
       {
         headerName: "Country",
         field: "country",
-        width: 120
+        width: 120,     
       },
       {
         headerName: "Year",
@@ -133,10 +106,12 @@ export class FourthExerciseComponent implements OnInit {
     this.rowBuffer = 0;
     this.rowSelection = "multiple";
     this.rowModelType = "infinite";
-    this.paginationPageSize = 100;
+    // this.paginationPageSize = 100;
+    this.paginationPageSize = 15;
     this.cacheOverflowSize = 2;
     this.maxConcurrentDatasourceRequests = 1;
-    this.infiniteInitialRowCount = 1000;
+    this.infiniteInitialRowCount = 15;
+    // this.infiniteInitialRowCount = 100;
     this.maxBlocksInCache = 10;
 
   }
@@ -166,6 +141,7 @@ export class FourthExerciseComponent implements OnInit {
             }, 500);
           }
         };
+        
         params.api.setDatasource(dataSource);
       });
   }
