@@ -10,6 +10,7 @@ export class ThirdExerciseComponent implements OnInit {
 
   title = 'app';
 
+  
   columnDefs = [
       {headerName: 'Make', field: 'make', sortable: true, filter: true},
       {headerName: 'Model', field: 'model', sortable: true, filter: true},
@@ -23,7 +24,10 @@ export class ThirdExerciseComponent implements OnInit {
   }
 
   ngOnInit() {
-      this.rowData = this.http.get('https://api.myjson.com/bins/15psn9');
+      // alert('Hola')
+      // this.rowData = this.http.get('https://api.myjson.com/bins/15psn9');
+      this.rowData = this.http.get('http://localhost:3001/cars');
+      // this.rowData = this.http.get('http://localhost:3000/foods');
   }
 
   
