@@ -1,15 +1,15 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { AllCommunityModules, Module  } from "@ag-grid-community/all-modules";
-import "@ag-grid-community/all-modules/dist/styles/ag-grid.css";
-import "@ag-grid-community/all-modules/dist/styles/ag-theme-balham.css";
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { AllCommunityModules, Module  } from '@ag-grid-community/all-modules';
+import '@ag-grid-community/all-modules/dist/styles/ag-grid.css';
+import '@ag-grid-community/all-modules/dist/styles/ag-theme-balham.css';
 
 
 @Component({
   selector: 'app-fourth-exercise',
   templateUrl: './fourth-exercise.component.html',
   styleUrls: ['./fourth-exercise.component.scss']
-  
+
 })
 export class FourthExerciseComponent implements OnInit {
 
@@ -31,7 +31,7 @@ export class FourthExerciseComponent implements OnInit {
   private rowData: [];
 
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
     this.columnDefs = [
       {
         headerName: "ID",
@@ -53,7 +53,7 @@ export class FourthExerciseComponent implements OnInit {
       {
         headerName: "Country",
         field: "country",
-        width: 120,     
+        width: 120,
       },
       {
         headerName: "Year",
@@ -93,7 +93,7 @@ export class FourthExerciseComponent implements OnInit {
     ];
 
     this.defaultColDef = { resizable: true };
-    
+
     this.components = {
       loadingRenderer: function(params) {
         if (params.value !== undefined) {
@@ -132,16 +132,16 @@ export class FourthExerciseComponent implements OnInit {
             setTimeout(function() {
               var rowsThisPage = data.slice(params.startRow, params.endRow);
               var lastRow = -1;
-           
+
               if (data.length <= params.endRow) {
                 lastRow = data.length;
               }
-              console.log(JSON.stringify(rowsThisPage));      
+              console.log(JSON.stringify(rowsThisPage));
               params.successCallback(rowsThisPage, lastRow);
             }, 500);
           }
         };
-        
+
         params.api.setDatasource(dataSource);
       });
   }

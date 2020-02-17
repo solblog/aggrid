@@ -3,12 +3,13 @@ import { TickCellRenderer } from './tick-cell-renderer.component';
 import '@ag-grid-community/all-modules/dist/styles/ag-grid.css';
 import '@ag-grid-community/all-modules/dist/styles/ag-theme-balham.css';
 
+
 @Component({
-  selector: 'app-second-exercise',
-  templateUrl: './second-exercise.component.html',
-  styleUrls: ['./second-exercise.component.scss']
+  selector: 'app-fifth-exercise',
+  templateUrl: './fifth-exercise.component.html',
+  styleUrls: ['./fifth-exercise.component.scss']
 })
-export class SecondExerciseComponent implements OnInit {
+export class FifthExerciseComponent implements OnInit {
 
   private gridApi;
   private gridColumnApi;
@@ -84,6 +85,9 @@ export class SecondExerciseComponent implements OnInit {
     alert('Hola');
 
   }
+
+
+
 
 
 }

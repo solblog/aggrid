@@ -12,19 +12,24 @@ import { SecondExerciseComponent } from './second-exercise/second-exercise.compo
 import { ThirdExerciseComponent } from './third-exercise/third-exercise.component';
 import { FourthExerciseComponent } from './fourth-exercise/fourth-exercise.component';
 
+import { TickCellRenderer } from './second-exercise/tick-cell-renderer.component';
+import { FifthExerciseComponent } from './fifth-exercise/fifth-exercise.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     FirstExerciseComponent,
     SecondExerciseComponent,
     ThirdExerciseComponent,
-    FourthExerciseComponent
+    FourthExerciseComponent,
+    TickCellRenderer,
+    FifthExerciseComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    AgGridModule.withComponents([])
+    AgGridModule.withComponents([TickCellRenderer])
   ],
   providers: [],
   bootstrap: [AppComponent]
