@@ -5,12 +5,19 @@
   <nav>
     <div style="border: 1px black solid;padding:10px;">
     <a routerLink="/first-exercise" routerLinkActive="active">First exercise - Add ag-Grid to Your Project</a>
+    <span style = "margin-left: 20px">https://www.ag-grid.com/angular-grid/#add-ag-grid-to-your-project</span>
   </div>
   <div style="border: 1px black solid;padding:10px;">
     <a routerLink="/second-exercise" routerLinkActive="active">Second exercise - Enable Sorting And Filtering</a>
+    <span style = "margin-left: 20px">https://www.ag-grid.com/angular-grid/#add-ag-grid-to-your-project</span>
   </div>
   <div style="border: 1px black solid;padding:10px;">
     <a routerLink="/third-exercise" routerLinkActive="active">Third exercise - Fetch Remote Data - Using Mockoon</a>
+    
+    <button (click)="setCarsProviderMockoon()" style="margin: 0px 10px;">useMockoon</button>
+    <button (click)="setCarsProviderMyJsonApi()">useMyJsonApi</button>
+    <p>  The service in use is {{usedService}} </p>    
+    <span> https://www.ag-grid.com/angular-grid/#fetch-remote-data</span>
   </div>
   <div style="border: 1px black solid;padding:10px;margin-bottom: 20px;">
     <a routerLink="/fourth-exercise" routerLinkActive="active">Fourth exercise- https://www.ag-grid.com/javascript-grid-infinite-scrolling/</a>

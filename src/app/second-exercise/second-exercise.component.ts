@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { TickCellRenderer } from './tick-cell-renderer.component';
 import '@ag-grid-community/all-modules/dist/styles/ag-grid.css';
 import '@ag-grid-community/all-modules/dist/styles/ag-theme-balham.css';
 
@@ -9,7 +8,7 @@ import '@ag-grid-community/all-modules/dist/styles/ag-theme-balham.css';
   styleUrls: ['./second-exercise.component.scss']
 })
 export class SecondExerciseComponent implements OnInit {
-
+  
   private gridApi;
   private gridColumnApi;
 
@@ -29,21 +28,13 @@ export class SecondExerciseComponent implements OnInit {
     this.columnDefs = [
         { headerName: 'Make',
           field: 'make',
-          cellEditor: 'agSelectCellEditor',
-          cellEditorParams: {
-            values: ['Toyota', 'Ford', 'Porsche']
-          }
+          sortable: true,
+          filter: true
         }
         ,
         {
           headerName: 'Model',
           field: 'model',
-          cellRenderer: 'tickCellRenderer',
-          cellEditor: 'agSelectCellEditor',
-          cellEditorParams: {
-            values: ['Male', 'Female'],
-            cellRenderer: 'tickCellRenderer'
-          }
         },
         { HeaderName: 'Price',
           field: 'price',
@@ -52,38 +43,13 @@ export class SecondExerciseComponent implements OnInit {
         }
       ];
 
-    this.frameworkComponents = { tickCellRenderer: TickCellRenderer };
-
-    this.defaultColDef = {
-      editable: true,
-      resizable: true
-    };
-
-
-    this.headerHeight = 0;
 
   }
 
   ngOnInit() {
   }
 
-  onCellValueChanged(params) {
 
-    var colId = params.column.getId();
-    alert(colId);
-
-  }
-
-  onGridReady(params) {
-
-    this.gridApi = params.api;
-    this.gridColumnApi = params.columnApi;
-
-    params.api.sizeColumnsToFit();
-
-    alert('Hola');
-
-  }
 
 
 }

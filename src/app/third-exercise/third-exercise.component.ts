@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { HttpRemoteService} from '../services/http-remote.service'
 
 @Component({
   selector: 'app-third-exercise',
@@ -10,7 +11,6 @@ export class ThirdExerciseComponent implements OnInit {
 
   title = 'app';
 
-  
   columnDefs = [
       {headerName: 'Make', field: 'make', sortable: true, filter: true},
       {headerName: 'Model', field: 'model', sortable: true, filter: true},
@@ -19,15 +19,14 @@ export class ThirdExerciseComponent implements OnInit {
 
   rowData: any;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private myServiceUrl: HttpRemoteService) {
 
   }
 
   ngOnInit() {
-      // alert('Hola')
-      // this.rowData = this.http.get('https://api.myjson.com/bins/15psn9');
-      this.rowData = this.http.get('http://localhost:3001/cars');
       // this.rowData = this.http.get('http://localhost:3000/foods');
+      // this.rowData = this.http.get('https://api.myjson.com/bins/15psn9');
+      this.rowData = this.http.get(this.myServiceUrl.geCarsService());
   }
 
   

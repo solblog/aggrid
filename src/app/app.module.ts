@@ -12,8 +12,11 @@ import { SecondExerciseComponent } from './second-exercise/second-exercise.compo
 import { ThirdExerciseComponent } from './third-exercise/third-exercise.component';
 import { FourthExerciseComponent } from './fourth-exercise/fourth-exercise.component';
 
-import { TickCellRenderer } from './second-exercise/tick-cell-renderer.component';
+import { TickCellRenderer } from './fifth-exercise/tick-cell-renderer.component';
 import { FifthExerciseComponent } from './fifth-exercise/fifth-exercise.component';
+
+import {HttpRemoteService} from './services/http-remote.service';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +34,7 @@ import { FifthExerciseComponent } from './fifth-exercise/fifth-exercise.componen
     HttpClientModule,
     AgGridModule.withComponents([TickCellRenderer])
   ],
-  providers: [],
+  providers: [HttpRemoteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
